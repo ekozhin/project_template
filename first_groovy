@@ -6,6 +6,9 @@ pipeline {
     stages {
         stage ('Init'){
             steps {
+                timeout(time:5, unit:'DAYS') {
+                  input message:'Approve ?'
+                }
                 sh 'ls -la'
             }
         }
